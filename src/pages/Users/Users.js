@@ -1,15 +1,16 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-
-import {asyncGetUsers} from "../redux/thunk";
+import { fetchUsers } from './actions';
 
 
 export const Users = (props) => {
-    const {users, isLoading, isFailed} = useSelector(state => state.usersReducer);
     const dispatch = useDispatch();
+    const users = useSelector(state => state.users.users);
+    const isLoading = useSelector(state => state.users.isLoading);
+
 
     useEffect(() => {
-        dispatch(asyncGetUsers());
+        dispatch(fetchUsers());
     }, []);
 
     return (
@@ -23,11 +24,6 @@ export const Users = (props) => {
             {
                 isLoading &&
                 <div>loading...</div>
-            }
-
-            {
-                isFailed &&
-                <div>failed...</div>
             }
         </React.Fragment>
     )

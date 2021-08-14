@@ -14,10 +14,6 @@ export const Navigation = () => {
             </li>
 
             <li>
-                <Link to="/counter">Counter</Link>
-            </li>
-
-            <li>
                 <Link to="/login">Login</Link>
             </li>
         </ul>

@@ -1,11 +1,10 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {Homepage} from "./pages/Homepage";
-import {Users} from "./pages/Users";
+import {Users} from "./pages/Users/Users";
 import {Navigation} from "./components/Navigation";
-import {Counter} from "./pages/Counter";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import {LoginWithFormik} from "./pages/Login";
+import {Login} from "./pages/Auth/Login";
 
 
 export const App = () => {
@@ -25,12 +24,8 @@ export const App = () => {
                         <Users/>
                     </Route>
 
-                    <Route path="/counter">
-                        <Counter/>
-                    </Route>
-
                     <Route path="/login">
-                        <LoginWithFormik/>
+                        <Login/>
                     </Route>
                 </Switch>
             </Router>
